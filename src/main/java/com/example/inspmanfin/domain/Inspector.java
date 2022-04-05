@@ -15,8 +15,8 @@ public class Inspector {
     private long id;
     private String firstName, lastName, email, password;
     private int inspectorGrade;
-    @ManyToOne
-    private List<Inspection> inspectionsList = new ArrayList<>();
+    //@ManyToOne
+    //private List<Inspection> inspectionsList = new ArrayList<>();
 
 
 

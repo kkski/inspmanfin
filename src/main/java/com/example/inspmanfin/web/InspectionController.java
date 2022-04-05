@@ -25,20 +25,20 @@ public class InspectionController {
 
     @GetMapping("/")
     public String showInspections(Model model) {
-        model.addAttribute("Inspections", InspectionRepository.findAll());
-        return "/Inspection/showInspections";
+        model.addAttribute("inspections", InspectionRepository.findAll());
+        return "/inspection/showInspections";
     }
     @GetMapping("/form")
     public String formShow(Model model){
-        model.addAttribute("Inspection", new Inspection());
-        return "/Inspection/createInspection";
+        model.addAttribute("inspection", new Inspection());
+        return "/inspection/creatInspection";
     }
 
     @PostMapping("/form")
-    public String formPerform(@Valid Inspection Inspection, Model model){
-        InspectionRepository.save(Inspection);
-        model.addAttribute("Inspections", InspectionRepository.findAll());
-        return "/Inspection/showInspections";
+    public String formPerform(@Valid Inspection inspection, Model model){
+        InspectionRepository.save(inspection);
+        model.addAttribute("inspections", InspectionRepository.findAll());
+        return "/inspection/showInspections";
     }
 
 

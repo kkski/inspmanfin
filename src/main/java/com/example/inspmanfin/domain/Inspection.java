@@ -5,7 +5,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 @Entity
@@ -15,13 +15,22 @@ public class Inspection {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @ManyToOne
-    private Scaffold scaffold;
+   // @ManyToOne
+    //private Scaffold scaffold;
+
     @DateTimeFormat
-    private Date dateOfInspection;
-    @ManyToOne
-    private Inspector inspector;
+    private Date dateOfInspectionString;
+    //@ManyToOne
+    //private Inspector inspector;
     private String inspectionMessage = "No message";
     private boolean approved = false;
+
+    @PrePersist
+    @PreUpdate
+    public void calculateGrade() {
+
+        scaffoldGrade = 7
+
+    }
 
 }
