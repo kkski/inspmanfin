@@ -18,19 +18,18 @@ public class Inspection {
    // @ManyToOne
     //private Scaffold scaffold;
 
-    @DateTimeFormat
-    private Date dateOfInspectionString;
+    private Date dateOfInspection;
     //@ManyToOne
     //private Inspector inspector;
     private String inspectionMessage = "No message";
     private boolean approved = false;
 
-    @PrePersist
-    @PreUpdate
-    public void calculateGrade() {
-
-        scaffoldGrade = 7
-
-    }
+//    @PrePersist
+//    @PreUpdate
+//    public void calculateGrade() {
+//
+//        scaffoldGrade = 7
+//
+//    }
 
 }
